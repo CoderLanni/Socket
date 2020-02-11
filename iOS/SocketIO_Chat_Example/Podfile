@@ -1,0 +1,36 @@
+platform :ios, '8.0'
+use_frameworks!
+
+#通用pods集
+def commonPods 
+    pod 'AFNetworking', '~> 2.0'
+    pod 'Masonry'
+    
+end
+
+#app专用pods集
+def appOnlyPods 
+    pod 'MBProgressHUD'
+    # pod 'WebViewJavascriptBridge', '~> 6.0.3'
+    pod 'SocketRocket'
+    pod 'Socket.IO-Client-Swift'
+
+
+
+end
+
+#扩展专用pods集
+def extensionPods 
+    # pod 'GTSDKExtension'
+end
+
+# 第一个target马甲包
+target :SocketIO_Chat_Example do
+    commonPods
+    appOnlyPods
+end
+
+# 第二个target马甲包
+# target :SecondTargetName do
+#     commonPods
+# end
